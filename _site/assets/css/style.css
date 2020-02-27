@@ -1,0 +1,353 @@
+/* tampilan box atau full */
+* {
+  box-sizing: border-box;
+}
+
+/* konfigurasi body */
+body {
+  font-family: sans-serif;
+  padding: 10px;
+  background-image: url('/assets/gambar/background.jpg');
+}
+
+/* konfigurasi header */
+.header {
+  padding: 30px;
+  border: 1px;
+  text-align: center;
+  background: white;
+  border: 5px solid #333;
+}
+
+.header h1 {
+  font-size: 40px;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,600");
+:root {
+  --background: rgba(0, 214, 170, .85);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #222;
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+}
+
+.content {
+  height: 200vh;
+  background-image: url(#);
+  background-color: #333;
+  background-blend-mode: multiply;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+}
+
+/* Navigasi Css */
+header {
+  background: var(--background);
+  text-align: center;
+  position: fixed;
+  z-index: 999;
+  width: 100%;
+}
+
+/* untuk mengubah fokus navigasi */
+.nav-toggle {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.nav-toggle:focus ~ .nav-toggle-label {
+  outline: 3px solid rgba(173, 216, 230, 0.75);
+}
+
+.nav-toggle-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin-left: 1em;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: white;
+  height: 2px;
+  width: 2em;
+  border-radius: 2px;
+  position: relative;
+}
+
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+}
+
+.nav-toggle-label span::before {
+  bottom: 7px;
+}
+
+.nav-toggle-label span::after {
+  top: 7px;
+}
+
+nav {
+  position: absolute;
+  text-align: left;
+  top: 100%;
+  left: 0;
+  background: var(--background);
+  width: 100%;
+  -webkit-transform: scale(1, 0);
+          transform: scale(1, 0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  transition: -webkit-transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out;
+  transition: transform 400ms ease-in-out, -webkit-transform 400ms ease-in-out;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 1em;
+  margin-left: 1em;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 150ms ease-in-out;
+}
+
+nav a:hover {
+  color: #000;
+}
+
+.nav-toggle:checked ~ nav {
+  -webkit-transform: scale(1, 1);
+          transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
+  opacity: 1;
+  transition: opacity 250ms ease-in-out 250ms;
+}
+
+@media screen and (min-width: 800px) {
+  .nav-toggle-label {
+    display: none;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto minmax(600px, 3fr) 1fr;
+  }
+
+  .logo {
+    grid-column: 2 / 3;
+  }
+
+  nav {
+    all: unset;
+    grid-column: 3 / 4;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    margin-left: 3em;
+    margin-bottom: 0;
+  }
+
+  nav a {
+    opacity: 1;
+    position: relative;
+  }
+
+  nav a::before {
+    content: '';
+    display: block;
+    height: 5px;
+    background: black;
+    position: absolute;
+    top: -.75em;
+    left: 0;
+    right: 0;
+    -webkit-transform: scale(0, 1);
+            transform: scale(0, 1);
+    transition: -webkit-transform ease-in-out 250ms;
+    transition: transform ease-in-out 250ms;
+    transition: transform ease-in-out 250ms, -webkit-transform ease-in-out 250ms;
+  }
+
+  nav a:hover::before {
+    -webkit-transform: scale(1, 1);
+            transform: scale(1, 1);
+  }
+}
+
+/* End*/
+
+/* mengubah hoover link menu */
+.warnamenu a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* konfigurasi kolom bagian kiri */
+.kolomkiri {
+  float: left;
+  width: 75%; /* mamakai % agar bisa Responsive */
+}
+
+/* Right column */
+.kolomkanan {
+  float: left;
+  width: 25%;
+  
+  background-color: #222;
+  padding-left: 20px;
+}
+
+/* Fake image */
+.profil {
+  background-color: #aaa;
+  width: 130px;
+  height: 130px;
+  padding: 20px;
+  line-height: 90px;
+  background-image: url('/assets/gambar/port.JPG');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  border-radius: 25% 25% 25% 25%;
+}
+
+/* konfigurasi background untuk artikel / card */
+.card {
+  background-color: white;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.card h1 {
+  text-align: center;
+}
+
+/* konfigurasi row agar footer bisa full-box */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Footer */
+.footer {
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background: rgb(0, 0, 0);
+  margin-top: 10px;
+}
+
+/* konfigurasi tampilan Responsive untuk layout */
+@media screen and (max-width: 800px) {
+  .kolomkiri, .kolomkanan {
+      width: 100%;
+      padding: 0;
+  }
+}
+
+/* konfigurasi tampilan Responsive untuk menu */
+@media screen and (max-width: 400px) {
+  .warnamenu a {
+      float: none;
+      width: 100%;
+  }
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+/* Set a style for the submit button */
+.btnmenu {
+  background-color: rgba(0, 214, 170, .85);
+  color: white;
+  padding: 8px 10px;
+  margin: 5px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.btnmenu:hover {
+  opacity: 1;
+}
+
+/* Overwrite default styles of hr */
+hr {
+    border: 1px solid #f1f1f1;
+    margin-bottom: 25px;
+}
+
+/* Set a style for the submit button */
+.registerbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 14px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+}
+
+.registerbtn:hover {
+    opacity: 1;
+}
+
+
+a {
+  box-sizing: 20px;
+}
